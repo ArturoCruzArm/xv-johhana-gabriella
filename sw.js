@@ -1,6 +1,6 @@
 // Service Worker — Foro 7 · xv-johhana-gabriella
 const IMAGE_CACHE = 'foro7-johhana-gabriella-images-v1';
-const APP_CACHE   = 'foro7-johhana-gabriella-app-v1';
+const APP_CACHE   = 'foro7-johhana-gabriella-app-v2';
 
 // Cache-first para imágenes: sirve desde caché, descarga si no está
 async function cacheFirstImage(request) {
