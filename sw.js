@@ -1,6 +1,6 @@
 // Service Worker — Foro 7 · xv-johhana-gabriella
 const IMAGE_CACHE = 'foro7-johhana-gabriella-images-v1';
-const APP_CACHE   = 'foro7-johhana-gabriella-app-v2';
+const APP_CACHE   = 'foro7-johhana-gabriella-app-v3';
 
 // Cache-first para imágenes: sirve desde caché, descarga si no está
 async function cacheFirstImage(request) {
@@ -41,7 +41,10 @@ self.addEventListener('fetch', event => {
     }
 });
 
-// Al activar: limpiar cachés viejos
+// Al instalar: activar inmediatamente sin esperar
+self.addEventListener('install', event => { self.skipWaiting(); });
+
+// Al activar: limpiar TODOS los cachés viejos
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(keys =>
