@@ -26,6 +26,9 @@
     { seccion: 'protagonistas', key: 'nombre_madre', sel: '[data-campo="madre-nombre"]' },
     { seccion: 'protagonistas', key: 'nombre_padre', sel: '[data-campo="padre-nombre"]' },
     { seccion: 'protagonistas', key: 'mensaje_especial', sel: '[data-campo="mensaje-especial"]' },
+    // Padrinos de honor
+    { seccion: 'padrinos_honor', key: 'padrino', sel: '[data-campo="padrino-nombre"]' },
+    { seccion: 'padrinos_honor', key: 'madrina', sel: '[data-campo="madrina-nombre"]' },
     // Vestimenta
     { seccion: 'vestimenta', key: 'tipo',              sel: '[data-campo="vestimenta-tipo"]' },
     { seccion: 'vestimenta', key: 'colores_reservados', sel: '[data-campo="vestimenta-colores"]' },
@@ -51,6 +54,19 @@
           if (attr) el.setAttribute(attr, val);
           else el.textContent = val;
         });
+      });
+
+      // Ocultar items de padres/padrinos que no tienen dato
+      [
+        { key: 'nombre_padre', seccion: 'protagonistas', itemId: 'padre-item' },
+        { key: 'padrino',      seccion: 'padrinos_honor', itemId: 'padrino-item' },
+        { key: 'madrina',      seccion: 'padrinos_honor', itemId: 'madrina-item' },
+      ].forEach(({ key, seccion, itemId }) => {
+        const val = cfg[seccion]?.[key];
+        if (!val || val === 'por_confirmar' || val === 'Por confirmar') {
+          const el = document.getElementById(itemId);
+          if (el) el.style.display = 'none';
+        }
       });
 
       // Exponer para uso en otros scripts

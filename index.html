@@ -78,36 +78,6 @@
             animation: fadeInUp 1s ease-out 0.9s both;
         }
 
-        /* Navigation */
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 10;
-        }
-
-        .nav-links a {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 600;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
         /* Info Section */
         .info-section {
             background: white;
@@ -351,15 +321,57 @@
         <p class="hero-date">18 de Julio, 2026</p>
         <p class="hero-location">León, Guanajuato</p>
 
-        <div class="nav-links">
-            <a href="index.html">Invitación</a>
-            <a href="contrato.html">Contrato</a>
-            <a href="logistica.html">Logística</a>
+    </section>
+
+    <!-- Padres y Padrinos -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-card" style="text-align:center;">
+                <h2 class="info-title">Con la bendición de mis Padres</h2>
+                <div class="decorative-line"></div>
+                <div class="event-details" style="margin-top:1rem;">
+                    <div class="detail-item">
+                        <div class="detail-icon">👩</div>
+                        <h3 class="detail-title">Mi Mamá</h3>
+                        <div class="detail-content">
+                            <p style="font-size:1.1rem;" data-campo="madre-nombre">Georgiana Tapia Jasso</p>
+                        </div>
+                    </div>
+                    <div class="detail-item" id="padre-item">
+                        <div class="detail-icon">👨</div>
+                        <h3 class="detail-title">Mi Papá</h3>
+                        <div class="detail-content">
+                            <p style="font-size:1.1rem;" data-campo="padre-nombre"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sparkle-divider">✨</div>
+
+                <h2 class="info-title" style="font-size:2rem;">Y mis Padrinos de Honor</h2>
+                <div class="decorative-line"></div>
+                <div class="event-details" style="margin-top:1rem;">
+                    <div class="detail-item" id="padrino-item">
+                        <div class="detail-icon">🤵</div>
+                        <h3 class="detail-title">Padrino</h3>
+                        <div class="detail-content">
+                            <p style="font-size:1.1rem;" data-campo="padrino-nombre">Francisco Javier Lira Jasso</p>
+                        </div>
+                    </div>
+                    <div class="detail-item" id="madrina-item">
+                        <div class="detail-icon">👗</div>
+                        <h3 class="detail-title">Madrina</h3>
+                        <div class="detail-content">
+                            <p style="font-size:1.1rem;" data-campo="madrina-nombre"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Info Section -->
-    <section class="info-section">
+    <section class="info-section" style="background:#fce7f3;">
         <div class="container">
             <div class="info-card">
                 <h2 class="info-title">Detalles del Evento</h2>
@@ -402,8 +414,8 @@
                         <div class="detail-icon">👗</div>
                         <h3 class="detail-title">Código de Vestimenta</h3>
                         <div class="detail-content">
-                            <p>Formal / Elegante</p>
-                            <p style="margin-top: 1rem; font-size: 0.9em; color: #999;">(Por confirmar)</p>
+                            <p data-campo="vestimenta-tipo">Formal / Elegante</p>
+                            <p style="margin-top:.5rem;font-size:.9em;color:#d946ef;" data-campo="vestimenta-colores"></p>
                         </div>
                     </div>
                 </div>
