@@ -321,6 +321,43 @@
             to { opacity:1; transform:translateY(0); }
         }
 
+        /* ── CANCELADO OVERLAY ── */
+        .cancelado-overlay {
+            position: fixed; inset: 0; z-index: 99999;
+            background: linear-gradient(160deg, #1a0a0a 0%, #2d0f0f 30%, #3d1515 100%);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 2rem;
+        }
+        .cancelado-overlay::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 40%, rgba(180,40,40,.12) 0%, transparent 70%);
+        }
+        .cancelado-overlay > * { position: relative; z-index: 1; }
+        .cancelado-icon { font-size: 3.5rem; margin-bottom: 1.5rem; opacity: .8; }
+        .cancelado-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 7vw, 3.5rem); font-weight: 600;
+            color: #fff; margin-bottom: .5rem; letter-spacing: .05em;
+        }
+        .cancelado-subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 300;
+            color: rgba(255,255,255,.5); margin-bottom: 2rem;
+        }
+        .cancelado-line {
+            width: 80px; height: 1px; margin: 0 auto 2rem;
+            background: linear-gradient(90deg, transparent, #c94c4c, transparent);
+        }
+        .cancelado-msg {
+            font-size: .95rem; color: rgba(255,255,255,.55);
+            line-height: 1.8; max-width: 480px;
+        }
+        .cancelado-badge {
+            display: inline-block; margin-top: 2rem; padding: .6rem 2rem;
+            border: 1.5px solid #c94c4c; color: #c94c4c;
+            font-size: .75rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase;
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             .section { padding: 3rem 1.2rem; }
@@ -331,6 +368,19 @@
     </style>
 </head>
 <body>
+    <!-- Evento Cancelado -->
+    <div class="cancelado-overlay" id="canceladoOverlay">
+        <div class="cancelado-icon">🚫</div>
+        <h1 class="cancelado-title">Evento Cancelado</h1>
+        <p class="cancelado-subtitle">XV Años — Johhana Gabriella</p>
+        <div class="cancelado-line"></div>
+        <p class="cancelado-msg">
+            Lamentamos informarte que este evento ha sido cancelado.<br>
+            Agradecemos tu interés y comprensión.
+        </p>
+        <span class="cancelado-badge">Cancelado</span>
+    </div>
+
     <!-- Splash Screen -->
     <div class="splash-screen" id="splashScreen">
         <div class="splash-content">
